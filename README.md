@@ -21,6 +21,7 @@ For more information on how this works with other frontend/backends, visit the [
         * [Classes](#classes)
 * [Database Architecture](#database-architecture)
 * [Getting Started](#getting-started)
+    * [Install Git Hooks (Recommended)](#install-git-hooks-recommended)
     * [API Documentation](#api-documentation)
     * [Run Application](#run-application)
     * [Apply Code Style](#apply-code-style)
@@ -113,6 +114,24 @@ Many developers using JPA tend to use `Long` as the ID type. However, consider w
 > **Note:** Ensure JDK 21 is installed.
 >
 > **Note:** If you encounter a permission denied error when running Gradle tasks, run `chmod +x gradlew` to grant execution permission.
+
+### Install Git Hooks (Recommended)
+
+To ensure code quality, install the pre-commit hook that runs all unit tests before each commit:
+
+```shell
+./scripts/install-git-hooks.sh
+```
+
+This hook will:
+- Run all unit tests before allowing a commit
+- Abort the commit if any tests fail
+- Ensure that only tested code is committed
+
+**Bypass hook in emergency situations:**
+```shell
+git commit --no-verify
+```
 
 ### API Documentation
 
