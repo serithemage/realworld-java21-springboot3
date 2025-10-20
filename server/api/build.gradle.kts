@@ -9,6 +9,7 @@ dependencies {
 
     implementation(libs.spring.boot.starter.web)
     implementation(libs.spring.boot.starter.oauth2.resource.server)
+    testImplementation("org.springframework.security:spring-security-test")
 
     // Remove Jakarta Persistence API related warnings
     implementation(libs.jakarta.persistence.api)
