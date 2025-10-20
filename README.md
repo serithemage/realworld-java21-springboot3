@@ -140,6 +140,22 @@ You can also import the [api-docs/openapi.yaml](api-docs/openapi.yaml) file into
 ./gradlew test
 ```
 
+### Generate Test Coverage Report
+
+```shell
+./gradlew test jacocoTestReport
+```
+
+Coverage reports are generated in:
+- HTML: `build/reports/jacoco/test/html/index.html`
+- XML: `build/reports/jacoco/test/jacocoTestReport.xml`
+
+Current coverage (module/core):
+- Instruction Coverage: 74%
+- Branch Coverage: 62%
+- Service Layer: 100%
+- Model Layer: 63%
+
 ### Run Build
 
 ```shell
