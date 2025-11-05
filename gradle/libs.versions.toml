@@ -1,6 +1,7 @@
 [versions]
 java = "21"
 spotless = "7.0.3"
+jacoco = "0.8.11"
 
 spring-boot = "3.3.0"
 spring-dependency-management = "1.1.5"
@@ -25,6 +26,7 @@ cache-caffeine = { group = "com.github.ben-manes.caffeine", name = "caffeine" }
 
 [plugins]
 java = { id = "java" }
+jacoco = { id = "jacoco" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
 spring-dependency-management = { id = "io.spring.dependency-management", version.ref = "spring-dependency-management" }

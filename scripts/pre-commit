@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# Pre-commit hook that runs all unit tests before allowing commit
+# To bypass this hook in emergency situations, use: git commit --no-verify
+#
+
+echo "🧪 Running unit tests before commit..."
+echo ""
+
+# Run Gradle tests with plain console output for better readability
+./gradlew test --console=plain
+
+# Capture the exit code
+TEST_RESULT=$?
+
+echo ""
+
+if [ $TEST_RESULT -ne 0 ]; then
+  echo "❌ Tests failed. Commit aborted."
+  echo ""
+  echo "Please fix the failing tests before committing."
+  echo "To bypass this check in emergency situations, use: git commit --no-verify"
+  echo ""
+  exit 1
+fi
+
+echo "✅ All tests passed. Proceeding with commit."
+echo ""
+exit 0
